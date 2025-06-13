@@ -7,7 +7,7 @@ import java.util.Map;
 
 import static lox.TokenType.*;
 
-public class Scanner {
+class Scanner {
     private final String sourceCode;
     private final List<Token> tokens = new ArrayList<>();
     private int start; // First character in a lexeme
