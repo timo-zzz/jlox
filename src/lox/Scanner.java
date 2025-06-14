@@ -142,7 +142,7 @@ class Scanner {
             advance();
 
         String text = sourceCode.substring(start, current);
-        TokenType type = keywords.get(text);
+        TokenType type = keywords.get(text); // Check for any of the keywords in the hashmap
 
         if (type == null)
             type = IDENTIFIER;
