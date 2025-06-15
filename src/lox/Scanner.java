@@ -103,7 +103,7 @@ class Scanner {
                 if (match('/')) {
                     // Comments go until the end of the line.
                     while (peek() != '\n' && !isAtEnd())
-                        advance();
+                        advance(); // Ignore comments
                 } else {
                     addToken(SLASH);
                 }
