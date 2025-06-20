@@ -99,7 +99,7 @@ class Parser {
             return new Expr.Grouping(expr);
         }
 
-        throw error(peek(), "Exoect expression.");
+        throw error(peek(), "Expect expression.");
     }
 
     private boolean match(TokenType... types) {
@@ -139,7 +139,7 @@ class Parser {
     }
 
     private Token peek() {
-        return tokens.get(current);
+        return tokens.get(current); // The current token is unconsumed.
     }
 
     private Token previous() {
@@ -151,6 +151,7 @@ class Parser {
         return new ParseError();
     }
 
+    // Used in order to synchronize after a syntax error
     private void synchronize() {
         advance();
 
