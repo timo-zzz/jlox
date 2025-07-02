@@ -16,9 +16,18 @@ public class GenerateAst {
         // Give a description of each type
         defineAst(outputDirectory, "Expr", Arrays.asList(
                 "Binary   : Expr left, Token operator, Expr right",
+                "Assign   : Token name, Expr value",
                 "Grouping : Expr expression",
                 "Literal  : Object value",
-                "Unary    : Token operator, Expr right"
+                "Unary    : Token operator, Expr right",
+                "Variable : Token name"
+        ));
+
+        defineAst(outputDirectory, "Stmt", Arrays.asList(
+                "Block      : List<Stmt> statements",
+                "Expression : Expr expression",
+                "Print      : Expr expression",
+                "Var        : Token name, Expr intializer"
         ));
     }
 
